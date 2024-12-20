@@ -33,9 +33,9 @@ public class CompraStepsDefs {
         productSteps.agregarAlCarrito(unidad, producto);
     }
 
-    @Then("valido el carrito de compra actualice correctamente")
-    public void validoElCarritoDeCompraActualiceCorrectamente() {
+    @Then("valido el carrito de compra actualice correctamente {double}")
+    public void validoElCarritoDeCompraActualiceCorrectamente(double montoEsperado) {
         productSteps.selecionarCarrito();
-        carritoSteps.concluirCompra();
+        carritoSteps.concluirCompra(montoEsperado);
     }
 }

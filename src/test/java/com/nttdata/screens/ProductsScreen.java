@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -34,6 +35,8 @@ public class ProductsScreen extends PageObject {
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"View cart\"]")
     private WebElement verCarrito;
 
+
+
     public boolean isProductDisplayed() {
         waitFor(ExpectedConditions.visibilityOf(lblProduct));
         return lblProduct.isEnabled();
@@ -48,6 +51,9 @@ public class ProductsScreen extends PageObject {
 
     public void seleccionarProducto(String producto) {
         buscarElemento(producto).click();
+
+        //ScrollUtils scroll = new ScrollUtils(getDriver());
+        //scroll.scrollToElementByXPath(productoABuscar);
     }
 
     public WebElement buscarElemento(String nombre) {
@@ -62,23 +68,37 @@ public class ProductsScreen extends PageObject {
     }
 
     public void selecionarCantidad(int cantidad) {
-        int alcance = 1;
+/*        int alcance = 1;
         if (cantidad > 1) {
+            ScrollUtils scroll = new ScrollUtils(getDriver());
             while (alcance != cantidad) {
-                cantidadProducto.click();
+                //cantidadProducto.click();
+                scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");//Scroll y seleciona el xpath de aumentaar cantidad
                 alcance++;
             }
+        }*/
+        ScrollUtils scroll = new ScrollUtils(getDriver());
+        for (int i=1; i<cantidad;i++){
+            scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");
         }
     }
 
-    public void selecionarCarrito() {
-        verCarrito.click();
-    }
 
     public void esperar(int tiempoEnSegundos) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(tiempoEnSegundos));
         wait.until(webDriver -> true);
     }
 
+    public void scrollAndClickAgregar() {
+        ScrollUtils scroll = new ScrollUtils(getDriver());
+        scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");
+        //scroll.scrollAndClickByXPath("//android.widget.RelativeLayout[@content-desc=\"View cart\"]");//Busca el xpath de add to cart
+   }
+
+
+    //Sin uso
+    public void selecionarCarrito() {
+        verCarrito.click();
+    }
 
 }

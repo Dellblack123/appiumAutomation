@@ -1,24 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="3" failures="1" name="Prueba de compras en My Demo App" skipped="0" tests="4" time="9.84" timestamp="2024-12-19 10:25:48"><testcase name="Compra de productos"><error message="Timed out after 2 seconds. Element not found&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: '4.14.1', revision: '03f8ede370'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.25'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">Timed out after 2 seconds. Element not found
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.25'
-Driver info: driver.version: unknown</error><system-err>Timed out after 2 seconds. Element not found
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.14.1', revision: '03f8ede370'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.25'
-Driver info: driver.version: unknown&#13;
-net.thucydides.core.annotations.locators.SmartAjaxElementLocator.ajaxFindElement(SmartAjaxElementLocator.java:164)&#13;
-net.thucydides.core.annotations.locators.SmartAjaxElementLocator.findElement(SmartAjaxElementLocator.java:116)&#13;
-com.nttdata.screens.ProductsScreen.agregarAlCarrito(ProductsScreen.java:61)&#13;
-com.nttdata.steps.ProductSteps.agregarAlCarrito(ProductSteps.java:15)&#13;
-net.thucydides.core.steps.BaseMethodRunner.invokeMethod(BaseMethodRunner.java:18)&#13;
-net.thucydides.core.steps.NormalMethodRunner.invokeMethodAndNotifyFailures(NormalMethodRunner.java:18)&#13;
-net.thucydides.core.steps.StepInterceptor.runNormalMethod(StepInterceptor.java:420)&#13;
-net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:195)&#13;
-net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:92)&#13;
-com.nttdata.stepsdefinitions.CompraStepsDefs.agregoUNIDADESDelSiguienteProducto(CompraStepsDefs.java:33)&#13;
-io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
-io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="6" name="Prueba de compras en My Demo App" skipped="0" tests="6" time="25.68" timestamp="2024-12-20 03:40:13"><testcase name="Compra de productos"><failure message="The page object class com.nttdata.screens.CarritoScreen could not be instantiated:&#10;Failed to instantiate page (net.thucydides.core.webdriver.DriverConfigurationError: Could not instantiate class io.appium.java_client.AppiumDriver)" type="net.thucydides.core.pages.WrongPageError">The page object class com.nttdata.screens.CarritoScreen could not be instantiated:
+Failed to instantiate page (net.thucydides.core.webdriver.DriverConfigurationError: Could not instantiate class io.appium.java_client.AppiumDriver)</failure><system-err>The page object class com.nttdata.screens.CarritoScreen could not be instantiated:
+Failed to instantiate page (net.thucydides.core.webdriver.DriverConfigurationError: Could not instantiate class io.appium.java_client.AppiumDriver)&#13;
+net.thucydides.core.pages.PageFactory.thisPageObjectLooksDodgy(PageFactory.java:103)&#13;
+net.thucydides.core.pages.PageFactory.createPageOfType(PageFactory.java:54)&#13;
+net.thucydides.core.steps.PageObjectDependencyInjector.instantiatePageObjectIfNotAssigned(PageObjectDependencyInjector.java:82)&#13;
+net.thucydides.core.steps.PageObjectDependencyInjector.injectDependenciesInto(PageObjectDependencyInjector.java:50)&#13;
+net.thucydides.core.steps.StepFactory.injectOtherDependenciesInto(StepFactory.java:208)&#13;
+net.thucydides.core.steps.StepFactory.instantiateNewStepLibraryFor(StepFactory.java:198)&#13;
+net.thucydides.core.steps.StepFactory.instantiateNewStepLibraryFor(StepFactory.java:179)&#13;
+net.thucydides.core.steps.StepFactory.getNewStepLibraryFor(StepFactory.java:126)&#13;
+net.thucydides.core.steps.IndividualInstancesByDefaultStepCreationStrategy.initiateStepsFor(IndividualInstancesByDefaultStepCreationStrategy.java:16)&#13;
+net.thucydides.core.steps.StepAnnotations.instantiateAnyUnitiaializedSteps(StepAnnotations.java:89)&#13;
+net.thucydides.core.steps.StepAnnotations.instanciateScenarioStepFields(StepAnnotations.java:70)&#13;
+net.thucydides.core.steps.StepAnnotations.injectScenarioStepsInto(StepAnnotations.java:52)&#13;
 io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
 io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
 io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;

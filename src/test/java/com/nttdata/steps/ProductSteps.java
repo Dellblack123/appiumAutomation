@@ -7,11 +7,12 @@ public class ProductSteps {
     ProductsScreen productsScreen;
 
     public void agregarAlCarrito(int unidad, String producto){
-        productsScreen.esperar(5);
+        productsScreen.esperar(1);
         productsScreen.seleccionarProducto(producto);
         productsScreen.esperar(1);
         //productsScreen.deslizarHaciaAbajo();
         productsScreen.selecionarCantidad(unidad);
+        //productsScreen.scrollAndClickAgregar();
         productsScreen.agregarAlCarrito();
     }
 
@@ -20,6 +21,7 @@ public class ProductSteps {
     }
 
     public void isProductDisplayed(){
+        productsScreen.esperar(2);
         boolean valor = productsScreen.isProductDisplayed();
         if (valor) System.out.println("Se abrió la app");
 

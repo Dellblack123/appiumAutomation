@@ -8,10 +8,10 @@ public class CarritoSteps {
 
     CarritoScreen carritoScreen;
 
-    public void concluirCompra(){
-        carritoScreen.esperar(5);
+    public void concluirCompra(double montoEsperado){
+        carritoScreen.esperar(2);
         carritoScreen.isCarritoDisplayed();
-        carritoScreen.esCorrectoMontoTotal(29.99);
+        carritoScreen.esCorrectoMontoTotal(montoEsperado);
         carritoScreen.pagarCompra();
     }
 

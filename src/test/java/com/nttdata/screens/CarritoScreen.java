@@ -37,6 +37,7 @@ public class CarritoScreen extends PageObject {
 
     public boolean esCorrectoMontoTotal(double valorEsperado) {
         double montoMostrado = obtenerNumero(precio)*obtenerNumero(cantidad);
+        System.out.println(montoMostrado);
         Assert.assertEquals("El monto total mostrado no es correcto", valorEsperado, montoMostrado, 0.01);
         return true;
     }
