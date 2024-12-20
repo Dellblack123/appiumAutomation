@@ -1,24 +1,28 @@
 package com.nttdata.screens;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.time.Duration;
-import java.util.List;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Collections;
+import java.util.List;
 
 public class ProductsScreen extends PageObject {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id=\"com.saucelabs.mydemoapp.android:id/productTV\"]")
     private WebElement lblProduct;
+
     @AndroidFindBy(xpath = "//androidx.recyclerview.widget.RecyclerView[@content-desc=\"Displays all products of catalog\"]/*")
     private List<WebElement> viewGroup;
+
     private String producto = "//android.widget.ImageView[@content-desc='%s']";
 
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc=\"Tap to add product to cart\"]")
@@ -27,54 +31,47 @@ public class ProductsScreen extends PageObject {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Increase item quantity\"]")
     private WebElement cantidadProducto;
 
-
-
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@content-desc=\"View cart\"]")
     private WebElement verCarrito;
 
-
-
-    public boolean isProductDisplayed(){
+    public boolean isProductDisplayed() {
         waitFor(ExpectedConditions.visibilityOf(lblProduct));
         return lblProduct.isEnabled();
     }
 
-
     public void listaProductos() {
         System.out.println("Cantidad de RecyclerViews encontrados: " + viewGroup.size());
-        if(viewGroup.size()<=0){
+        if (viewGroup.size() <= 0) {
             System.out.println("No se cargó la lista correctamente");
         }
     }
 
-    public void seleccionarProducto(String producto){
+    public void seleccionarProducto(String producto) {
         buscarElemento(producto).click();
     }
 
     public WebElement buscarElemento(String nombre) {
         String productoABuscar = String.format(producto, nombre);
-        WebElement element = getDriver().findElement(By.xpath("//android.widget.ImageView[@content-desc='Sauce Labs Backpack']"));
+        WebElement element = getDriver().findElement(By.xpath(productoABuscar));
         System.out.println("Elemento encontrado: " + element.getTagName() + " | Texto: " + element.getText());
         return element;
     }
 
-    public void agregarAlCarrito(){
+    public void agregarAlCarrito() {
         agregar.click();
     }
 
-    public void selecionarCantidad(int cantidad){
-        int alcance=1;
-        if (cantidad>1){
-
-            while (alcance!=cantidad){
+    public void selecionarCantidad(int cantidad) {
+        int alcance = 1;
+        if (cantidad > 1) {
+            while (alcance != cantidad) {
                 cantidadProducto.click();
                 alcance++;
             }
         }
-
     }
 
-    public void selecionarCarrito(){
+    public void selecionarCarrito() {
         verCarrito.click();
     }
 
@@ -82,7 +79,6 @@ public class ProductsScreen extends PageObject {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(tiempoEnSegundos));
         wait.until(webDriver -> true);
     }
-
 
 
 }

@@ -1,4 +1,0 @@
-com\nttdata\stepsdefinitions\CompraStepsDefs.class
-com\nttdata\steps\ProductsScreen.class
-com\nttdata\steps\CarritoScreen.class
-com\nttdata\runners\CucumberTestSuite.class

@@ -9,6 +9,12 @@ Feature: Prueba de compras en My Demo App
     Then valido el carrito de compra actualice correctamente
     Examples:
       | PRODUCTO                        | UNIDADES |
+      | Sauce Labs Fleece Jacket     | 1                   |
       | Sauce Labs Backpack     | 1                   |
       | Sauce Labs Bolt - T-Shirt | 1                   |
-      | Sauce Labs Bike Light     | 2                   |
+     | Sauce Labs Bike Light     | 2                   |
+#      | Sauce Labs Onesie    | 1                   |
+#      | Sauce Labs Fleece Jacket     | 1                   |
+#      | Sauce Labs Backpack     | 1                   |
+#      | Sauce Labs Bolt - T-Shirt | 1                   |
+#      | Sauce Labs Bike Light     | 2                   |
