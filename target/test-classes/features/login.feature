@@ -9,16 +9,12 @@ Feature: Prueba de compras en My Demo App
     Then valido el carrito de compra actualice correctamente <MONTOESPERADO>
     Examples:
       | PRODUCTO                        | UNIDADES | MONTOESPERADO  |
-      | Sauce Labs Fleece Jacket     | 5                   |  249.95     |
-      | Sauce Labs Fleece Jacket     | 5                   |  249.95     |
-      | Sauce Labs Fleece Jacket     | 5                   |  249.95     |
       | Sauce Labs Backpack     | 2                   |  59.98     |
       | Sauce Labs Backpack     | 2                   |  59.98     |
       | Sauce Labs Backpack     | 2                   |  59.98     |
-#      | Sauce Labs Bolt - T-Shirt | 1                   |
-#     | Sauce Labs Bike Light     | 2                   |
-#      | Sauce Labs Onesie    | 1                   |
-#      | Sauce Labs Fleece Jacket     | 1                   |
-#      | Sauce Labs Backpack     | 1                   |
-#      | Sauce Labs Bolt - T-Shirt | 1                   |
-#      | Sauce Labs Bike Light     | 2                   |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bike Light     | 5                   | 49.95          |
+      | Sauce Labs Bike Light     | 5                   | 49.95          |
+      | Sauce Labs Bike Light     | 5                   | 49.95          |

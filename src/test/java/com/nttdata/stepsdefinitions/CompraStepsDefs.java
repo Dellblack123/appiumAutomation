@@ -31,11 +31,11 @@ public class CompraStepsDefs {
     @When("agrego {int} del siguiente producto {string}")
     public void agregoUNIDADESDelSiguienteProducto(int unidad, String producto) {
         productSteps.agregarAlCarrito(unidad, producto);
+        productSteps.selecionarCarrito();
     }
 
     @Then("valido el carrito de compra actualice correctamente {double}")
     public void validoElCarritoDeCompraActualiceCorrectamente(double montoEsperado) {
-        productSteps.selecionarCarrito();
         carritoSteps.concluirCompra(montoEsperado);
     }
 }

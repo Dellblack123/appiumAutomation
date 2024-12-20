@@ -51,9 +51,6 @@ public class ProductsScreen extends PageObject {
 
     public void seleccionarProducto(String producto) {
         buscarElemento(producto).click();
-
-        //ScrollUtils scroll = new ScrollUtils(getDriver());
-        //scroll.scrollToElementByXPath(productoABuscar);
     }
 
     public WebElement buscarElemento(String nombre) {
@@ -68,15 +65,6 @@ public class ProductsScreen extends PageObject {
     }
 
     public void selecionarCantidad(int cantidad) {
-/*        int alcance = 1;
-        if (cantidad > 1) {
-            ScrollUtils scroll = new ScrollUtils(getDriver());
-            while (alcance != cantidad) {
-                //cantidadProducto.click();
-                scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");//Scroll y seleciona el xpath de aumentaar cantidad
-                alcance++;
-            }
-        }*/
         ScrollUtils scroll = new ScrollUtils(getDriver());
         for (int i=1; i<cantidad;i++){
             scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");
@@ -92,7 +80,6 @@ public class ProductsScreen extends PageObject {
     public void scrollAndClickAgregar() {
         ScrollUtils scroll = new ScrollUtils(getDriver());
         scroll.scrollAndClickById("com.saucelabs.mydemoapp.android:id/plusIV");
-        //scroll.scrollAndClickByXPath("//android.widget.RelativeLayout[@content-desc=\"View cart\"]");//Busca el xpath de add to cart
    }
 
 

@@ -11,25 +11,6 @@ public class ScrollUtils {
         this.driver = driver;
     }
 
-    public void scrollAndClickTexto(String visibleText) {
-        driver.findElement(AppiumBy.androidUIAutomator(
-                        "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
-                                ".scrollIntoView(new UiSelector().textContains(\"" + visibleText + "\").instance(0))"))
-                .click();
-    }
-
-    public WebElement scrollToElementByXPath(String xpath) {
-        String uiScrollableCommand = "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
-                ".scrollIntoView(new UiSelector().resourceIdMatches(\".*\"))";
-        driver.findElement(AppiumBy.androidUIAutomator(uiScrollableCommand));
-        return driver.findElement(AppiumBy.xpath(xpath));
-    }
-
-    public void scrollAndClickByXPath(String xpath) {
-        WebElement element = scrollToElementByXPath(xpath);
-        element.click();
-    }
-
     public void scrollAndClickById(String elementId) {
         driver.findElement(AppiumBy.androidUIAutomator(
                         "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
@@ -37,11 +18,5 @@ public class ScrollUtils {
                 .click();
     }
 
-    public void scrollAndClickByAccessibilityId(String accessibilityId) {
-        driver.findElement(AppiumBy.androidUIAutomator(
-                        "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
-                                ".scrollIntoView(new UiSelector().description(\"" + accessibilityId + "\"))"))
-                .click();
-    }
 }
 

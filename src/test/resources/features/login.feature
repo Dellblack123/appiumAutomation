@@ -12,9 +12,9 @@ Feature: Prueba de compras en My Demo App
       | Sauce Labs Backpack     | 2                   |  59.98     |
       | Sauce Labs Backpack     | 2                   |  59.98     |
       | Sauce Labs Backpack     | 2                   |  59.98     |
-      | Sauce Labs Bolt - T-Shirt | 3                   | 47.97          |
-      | Sauce Labs Bolt - T-Shirt | 3                   | 47.97          |
-      | Sauce Labs Bolt - T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
+      | Sauce Labs Bolt T-Shirt | 3                   | 47.97          |
       | Sauce Labs Bike Light     | 5                   | 49.95          |
       | Sauce Labs Bike Light     | 5                   | 49.95          |
       | Sauce Labs Bike Light     | 5                   | 49.95          |
